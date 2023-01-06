@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Light Dark Mode</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+        main{
+            margin: 5vh 15%;
+        }
+        h1{
+            font-size: 40px;
+            font-weight: 400;
+            text-align: center;
+        }
+        img{
+            width: 40%;
+            height: auto;
+           margin-left: 30%;
+           border: 2px solid #fff;
+           border-radius: 50%;
+        }
+        p{
+            text-align: center;
+            font-size: 18px;
+        }
+        label{
+            position: absolute;
+            width: 48px;
+            height: 27px;
+            right: 30px;
+            top: 30px;
+            border: 2px solid;
+            border-radius: 20px;
+        }
+        label:before{
+            position: absolute;
+            content: "";
+            width: 20px;
+            height: 20px;
+            left: 1px;
+            top: 1px;
+            border: 2px solid;
+            border-radius:50%;
+            background: #000;
+            cursor: pointer;
+            transition: 0.4s;
+        }
+        label.active:before{
+            left: 24px;
+            background: #fff;
+        }
+        body.night{
+            background: #000;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <label id="dark-change"></label>
+    </header>
+        <main>
+            <h1>Easy light Dark Mode</h1>
+            <div id="respon">
+                <img src="lamp.png">
+                <p>Dark mode is a special screen setting designed to make the best use of dim light situations, particularly at night. Dark mode displays gray-ish or light text on a dark background instead of dark text and graphics against a white background, as is typical for most apps</p>
+            </div>
+        </main>
+        <script>
+            var content = document.getElementsByTagName('body')[0];
+            var darkMode = document.getElementById('dark-change');
+            darkMode.addEventListener('click', function(){
+                darkMode.classList.toggle('active');
+                content.classList.toggle('night');
+            })
+        </script>
+    
+    
+</body>
+</html>
